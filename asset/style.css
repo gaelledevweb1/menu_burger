@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@500&display=swap');
+*{
+    
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+/* plus interressant d'utiliser le REM que le px pour le responsive s'adapte mieux, l'utilisateur controle la taille du texte.1REM =16px (par defaut, la taille de police est à 100%) */
+html{
+    font-size: 62,5%;  /*1rem= 10px*/
+    
+}
+body{
+    font-size: 1.4rem;
+    font-family: 'Quicksand', sans-serif;
+    color: white;
+    
+
+}
+.container{
+    height:100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1E2337;
+}
+/* style menu desktopp */
+.navbar-desktop{
+ height:8rem;/* 80px*/
+ line-height: 8rem;/* centre verticalement  */
+text-align: center; /*centre horizontalement*/
+}
+/* style des liens */
+.navbar-desktop a{
+    padding: 3rem;
+}
+
+/* style menu mobile */
+.navbar-mobile{
+    display: none;
+}
+.navbar-mobile i{
+    position : fixed;
+    top:9px;
+    right:15px;
+    font-size: 3rem;
+    color: white;
+    z-index: 9999;
+}
+.navbar-mobile .modal{
+    background-color:#f92995 ;
+    height:100vh ;
+    position: fixed;
+    top:0 ;
+    left:0 ;
+    width: 100%;
+    opacity: 0.9;
+}
+.navbar-mobile .navbar-mobile-Liste{
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.navbar-mobile .navbar-mobile-Liste a{
+    font-size: 5rem;
+    font-weight: 800;
+    color:#1E2337 ;
+    padding: 2rem;
+}
+/* media Queries */
+@media screen and (max-width :700px) {
+    .navbar-desktop{
+        display: none;
+    } 
+    .navbar-mobile{
+        display: block;
+    }
+    
+    .modal{
+        background-color:#f92995 ;
+        height:100vh ;
+        position: fixed;
+        transition: top  0.9s ;
+        top:-100vh ;
+        left:0 ;
+        width: 100%;
+        opacity: 0.9;
+    }
+    .change-modal{
+       top:0; 
+    }
+}
